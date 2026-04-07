@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia prático de seletores CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="cabecalho">
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo">
+  </div>
+
+  <div class="titulo">
+    <h1>Guia prático de seletores CSS</h1>
+    <p>Exemplos visuais para aula introdutória</p>
+  </div>
+</header>
+
+<main class="pagina">
+
+<section class="bloco">
+  <h2>1. O problema inicial</h2>
+  <p>
+    Em CSS, os seletores indicam exatamente quais elementos receberão um estilo.
+  </p>
+  <p>
+    Em outras palavras, eles definem onde cada regra será aplicada dentro da página.
+  </p>
+
+  <pre><code>p {
+  color: blue;
+}</code></pre>
+</section>
+
+<section class="bloco">
+  <h2>2. Seletor universal e por tipo</h2>
+
+  <div class="card">
+    <p>
+      O seletor por tipo aplica estilo a todos os elementos de uma mesma tag.
+    </p>
+    <p>
+      Já o seletor universal afeta todos os elementos do documento, sendo útil
+      para configurações gerais.
+    </p>
+
+<pre><code>* {
+  box-sizing: border-box;
+}
+
+p {
+  color: #334155;
+  line-height: 1.6;
+}</code></pre>
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>3. Classe e ID</h2>
+
+  <div class="duas-colunas">
+
+    <div class="card">
+      <p class="destaque">
+        Classes podem ser utilizadas em vários elementos.
+      </p>
+      <p>
+        Isso permite reutilizar estilos e manter consistência visual.
+      </p>
+
+<pre><code>.destaque {
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  font-weight: bold;
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <p id="aviso">
+        IDs devem ser únicos dentro da página.
+      </p>
+      <p>
+        Eles são usados para identificar elementos específicos.
+      </p>
+
+<pre><code>#aviso-unico {
+  color: #8b0000;
+  font-style: italic;
+}</code></pre>
+    </div>
+
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>4. Combinadores</h2>
+
+  <div class="duas-colunas">
+
+    <div class="card">
+      <h3>Descendência</h3>
+
+      <nav>
+        <a href="#">Início</a><br>
+        <a href="#">Contato</a>
+      </nav>
+
+      <p>
+        O seletor pode atingir elementos dentro de outros,
+        como links dentro de um menu.
+      </p>
+
+<pre><code>nav a {
+  text-decoration: none;
+  color: #1d4ed8;
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <h3>Filho direto</h3>
+
+      <ul class="menu-filho">
+        <li>Item A</li>
+        <li>Item B
+          <ul>
+            <li>Subitem B.1</li>
+          </ul>
+        </li>
+        <li>Item C</li>
+      </ul>
+
+      <p>
+        Também é possível selecionar apenas elementos filhos diretos.
+      </p>
+
+<pre><code>ul.menu-filho &gt; li {
+  background: #f8fafc;
+  padding: 6px;
+}</code></pre>
+    </div>
+
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>5. Pseudo-classes</h2>
+
+  <div class="duas-colunas">
+
+    <div class="card">
+      <a class="botao" href="#">Passe o mouse aqui</a>
+
+      <form>
+        <input type="text" placeholder="Clique aqui">
+      </form>
+
+      <p>
+        Pseudo-classes representam estados como interação do usuário.
+      </p>
+
+<pre><code>.botao:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+input:focus {
+  outline: 2px solid #2563eb;
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <ul class="lista-zebrada">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+      </ul>
+
+      <p>
+        Algumas pseudo-classes selecionam elementos pela posição.
+      </p>
+
+<pre><code>.lista-zebrada li:nth-child(2n) {
+  background: #e0f2fe;
+}</code></pre>
+    </div>
+
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>6. Pseudo-elementos</h2>
+
+  <div class="duas-colunas">
+
+    <div class="card">
+      <p class="pseudo">
+        Texto com conteúdo antes e depois
+      </p>
+
+      <p>
+        Permitem adicionar conteúdo visual sem alterar o HTML.
+      </p>
+
+<pre><code>.pseudo::before {
+  content: "&gt;&gt; ";
+}
+
+.pseudo::after {
+  content: " &lt;&lt;";
+}</code></pre>
+    </div>
+
+    <div class="card">
+      <p class="primeira-letra">
+        Este texto destaca a primeira letra.
+      </p>
+
+<pre><code>.primeira-letra::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0b51bb;
+}</code></pre>
+    </div>
+
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>7. Especificidade</h2>
+
+  <p id="principal" class="destaque">
+    Este elemento recebe estilos de vários seletores
+  </p>
+
+  <p>
+    Quando há conflito entre regras, o CSS aplica a mais específica.
+  </p>
+  <p>
+    Em geral, IDs têm prioridade maior que classes e seletores simples.
+  </p>
+
+<pre><code>p {
+  color: #334155;
+}
+
+.destaque {
+  color: #ea580c;
+}
+
+#principal {
+  color: #b91c1c;
+}</code></pre>
+</section>
+
+<section class="bloco">
+  <h2>8. Resumo</h2>
+  <ul>
+    <li>Seletores definem quais elementos recebem estilo</li>
+    <li>Classes podem ser reutilizadas</li>
+    <li>IDs devem ser únicos</li>
+    <li>Combinadores dependem da estrutura</li>
+    <li>Pseudo-classes representam estados</li>
+    <li>Pseudo-elementos criam conteúdo visual</li>
+    <li>Especificidade define prioridade</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>&copy; 2026 Gabriel Antonio - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
