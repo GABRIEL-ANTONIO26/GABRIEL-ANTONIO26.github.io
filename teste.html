@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guia Prático de Seletores CSS</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Guia Prático de Seletores CSS</h1>
+      <p>
+        Aprenda os principais seletores CSS com exemplos práticos
+        e uma estrutura moderna usando CSS Grid.
+      </p>
+    </header>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+      <h2>Menu</h2>
+
+      <nav>
+        <ul>
+          <li><a href="#universal">Universal</a></li>
+          <li><a href="#classe">Classes</a></li>
+          <li><a href="#id">ID</a></li>
+          <li><a href="#combinadores">Combinadores</a></li>
+          <li><a href="#pseudo">Pseudo-classes</a></li>
+          <li><a href="#elementos">Pseudo-elementos</a></li>
+          <li><a href="#especificidade">Especificidade</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+
+      <section id="universal" class="card">
+        <h2>Seletor Universal</h2>
+        <p>Seleciona todos os elementos da página.</p>
+
+        <pre>
+* {
+   margin: 0;
+   padding: 0;
+}
+        </pre>
+      </section>
+
+      <section id="classe" class="card">
+        <h2>Seletor de Classe</h2>
+        <p>Seleciona elementos através de uma classe.</p>
+
+        <pre>
+.botao {
+   background: blue;
+}
+        </pre>
+      </section>
+
+      <section id="id" class="card">
+        <h2>Seletor de ID</h2>
+        <p>Seleciona um elemento único.</p>
+
+        <pre>
+#titulo {
+   color: red;
+}
+        </pre>
+      </section>
+
+      <section id="combinadores" class="card">
+        <h2>Combinadores</h2>
+        <p>Permitem selecionar elementos dentro de outros elementos.</p>
+
+        <pre>
+nav a {
+   text-decoration: none;
+}
+        </pre>
+      </section>
+
+      <section id="pseudo" class="card">
+        <h2>Pseudo-classes</h2>
+        <p>Aplicam estilos em estados específicos.</p>
+
+        <pre>
+button:hover {
+   background: green;
+}
+        </pre>
+      </section>
+
+      <section id="elementos" class="card">
+        <h2>Pseudo-elementos</h2>
+        <p>Permitem estilizar partes específicas de um elemento.</p>
+
+        <pre>
+p::first-letter {
+   font-size: 2rem;
+}
+        </pre>
+      </section>
+
+      <section id="especificidade" class="card">
+        <h2>Especificidade CSS</h2>
+        <p>
+          A especificidade define qual regra CSS terá prioridade
+          quando houver conflito entre seletores.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        Site desenvolvido para a disciplina de Desenvolvimento Web
+        utilizando HTML5, CSS3 e CSS Grid.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
